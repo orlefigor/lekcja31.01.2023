@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="display"></div>
+    <script>
+      const display = document.querySelector("#display");
+
+      const auto = {
+        company: "skoda",
+        model: "Panda",
+        MaxSpeed: "200km/h",
+        yearOfProduction: 2023,
+        engineType: "electric",
+        jedzSzybko() {
+          return `wrumwrum ${auto.MaxSpeed}`;
+        },
+        jedzWolno() {
+          return `brumbrum 40km/h`;
+        },
+      };
+      auto.color = "zielony";
+
+      //display.innerHTML += auto.company;
+      //display.innerHTML += `<p> ${auto.jedzSzybko()} </p>`;
+
+      // for (const key in auto) {
+      //   display.innerHTML += `<p>${key} typu: ${typeof auto[key]}</p>`;
+      // }
+
+      //for (const key in auto) {
+      //  display.innerHTML += `<p>${key} ${auto[key]}</p>`;
+      //}
+
+      const kebaby = [
+        {
+          nazwa: "rollo",
+          cena: 19,
+        },
+        {
+          nazwa: "w bolce",
+          cena: 18,
+        },
+        {
+          nazwa: "rollo+",
+          cena: 22,
+        },
+        {
+          nazwa: "w bolce+",
+          cena: 21,
+        },
+      ];
+
+      //for (const kebab of kebaby) {
+      //  display.innerHTML += `<p>${kebab.nazwa}</p>`;
+      //}
+
+      //for (const kebab of kebaby) {
+      //  if (kebab.cena >= 20) {
+      //    display.innerHTML += `<p>${kebab.nazwa}</p>`;
+      //  }
+      //}
+
+      kebaby
+        .filter((kebab) => kebab.cena > 19)
+        .map((kebab) => {
+          display.innerHTML += `<p>${kebab.nazwa}</p>`;
+        });
+    </script>
+  </body>
+</html>
